@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    label,
+    input {
+        @apply text-[12px] font-poppin font-normal leading-[18px];
+    }
+    label {
+        @apply capitalize;
+    }
+
+    input, .submit {
+        @apply px-[22px] py-[20px]  border-2  border-input-border rounded-[40px] mt-[5px];
+    }
+    .submit {
+        @apply text-center font-semibold uppercase text-white border-transparent tracking-wider cursor-pointer mt-[60px];
+    }
+    .input-container {
+        @apply flex flex-col mb-25px;
+        
+    }
+}
