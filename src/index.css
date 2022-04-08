@@ -22,4 +22,7 @@
         @apply flex flex-col mb-25px;
         
     }
+    p{
+        @apply text-[12px];
+    }
 }
