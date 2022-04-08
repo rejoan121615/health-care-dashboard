@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
+import TermsAndCondition from "../pages/TermsAndCondition";
 
-const FormTemplate = () => {
-
+const FormTemplate = (props) => {
+    console.log(props.type);
 
     const [logIn, setLogin] = useState(false);
-
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ const FormTemplate = () => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        console.log(name, email, password)
+        console.log(name, email, password);
     };
 
     return (
@@ -48,17 +49,20 @@ const FormTemplate = () => {
                 >
                     {/* name input  */}
 
-                    <div className=" input-container ">
-                        <label htmlFor="name" className=" label">
-                            name
-                        </label>
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={nameChangeHandler}
-                            placeholder="Ex. Mohd Rejoan"
-                        />
-                    </div>
+                    {props.type && (
+                        <div className=" input-container ">
+                            <label htmlFor="name" className=" label">
+                                name
+                            </label>
+                            <input
+                                type="text"
+                                value={name}
+                                onChange={nameChangeHandler}
+                                placeholder="Ex. Mohd Rejoan"
+                            />
+                        </div>
+                    )}
+
                     {/* email input  */}
                     <div className=" input-container">
                         <label htmlFor="email" className=" label">
@@ -83,12 +87,77 @@ const FormTemplate = () => {
                             placeholder="Ex. XXXXXXX"
                         />
                     </div>
-
+                    {/* term and condition  */}
+                    <div
+                        className={`flex items-center mt-3 ${
+                            !props.type ? "justify-between" : ""
+                        }`}
+                    >
+                        {!props.type ? (
+                            <React.Fragment>
+                                <div className=" flex items-center">
+                                    <input
+                                        type="checkbox"
+                                        className=" mt-0 mr-2 cursor-pointer"
+                                    />
+                                    <p className=" label capitalize">
+                                        remember me
+                                    </p>
+                                </div>
+                                <Link
+                                    to="/forgot-password"
+                                    className=" text-blue-700 capitalize underline text-[12px]"
+                                >
+                                    forgot password
+                                </Link>
+                            </React.Fragment>
+                        ) : (
+                            <React.Fragment>
+                                <input
+                                    type="checkbox"
+                                    className=" mt-0 mr-2 cursor-pointer"
+                                />
+                                <p className="label">
+                                    I accept the{" "}
+                                    <Link
+                                        to="/term-and-condition"
+                                        className=" text-blue-700 capitalize underline"
+                                    >
+                                        term and condition
+                                    </Link>
+                                </p>
+                            </React.Fragment>
+                        )}
+                    </div>
+                    {/* submit button  */}
                     <input
                         type="submit"
                         value="submit"
                         className="submit w-full bg-form-bg"
                     />
+                    {/* another links  */}
+                    <div className=" flex items-center justify-center mt-[30px] text-[14px]">
+                        <p className=" mr-2">
+                            {!props.type
+                                ? "Don't have a account?"
+                                : "Already have a account?"}{" "}
+                        </p>{" "}
+                        {props.type ? (
+                            <Link
+                                to="/log-in"
+                                className=" text-blue-700 underline"
+                            >
+                                Login
+                            </Link>
+                        ) : (
+                            <Link
+                                to="/sign-up"
+                                className=" text-blue-700 underline"
+                            >
+                                Sign-up
+                            </Link>
+                        )}
+                    </div>
                 </form>
             </div>
         </section>
