@@ -10,6 +10,7 @@ module.exports = {
                 "input-border": "#E7E7E7",
                 "form-bg": "#100db1",
                 "half-white": "#f7f7f7",
+                "light-black": "#343434",
             },
             margin: {
                 "25px": "25px",
