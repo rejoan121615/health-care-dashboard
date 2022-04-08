@@ -1,7 +1,11 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+// import package
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas, faXmark } from "@fortawesome/free-solid-svg-icons";
+import Chart from 'chart.js/auto'
+
+// component import
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import TermAndCondition from "./pages/TermsAndCondition";
