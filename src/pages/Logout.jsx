@@ -6,7 +6,9 @@ const Logout = () => {
     const [value, setValue] = useState("");
 
     const changeHandler = (event) => {
-        setValue(event.target.value);
+        setValue(event);
+        console.log(value)
+        
     };
 
     const submitHandler = (event) => {
@@ -19,17 +21,7 @@ const Logout = () => {
             <div className=" flex justify-center flex-col w-3/6 xl:max-w-[650px] ">
                 <img className=" w-24 mx-auto" src={Logo} alt="icon" />
                 <form onSubmit={submitHandler}>
-                    <div className=" flex flex-col mt-11">
-                        <label htmlFor="email" className=" label">
-                            email
-                        </label>
-                        <input
-                            type="email"
-                            value={value}
-                            onChange={changeHandler}
-                            placeholder="wearecrx@gmail.com"
-                        />
-                    </div>
+                    <Input holder="wearecrx@gmail.com" label="email" type="email" change={changeHandler} />
                     <input
                         type="submit"
                         value="submit"
