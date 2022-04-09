@@ -14,6 +14,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/NavigationBar";
 import Doctors from "./pages/Doctors";
 import Logout from './pages/Logout';
+import Setting from './pages/Setting';
 
 // import PortalNavBar from "../components/PortalNavBar";
 import SearchBar from "./components/SearchBar";
@@ -63,6 +64,7 @@ const App = () => {
                     />
                     <Route path="/forgot-password" component={ForgotPassword} />
                     <Route path="/doctors" component={Doctors} />
+                    <Route path="/setting" component={Setting} />
                     <Route path="/logout" component={Logout} />
                 </aside>
                 {/* right side content  */}
