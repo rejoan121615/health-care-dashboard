@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import useInputValidation from "../hooks/useInputValidation";
 
 const Input = (props) => {
+    
+    // value 
+    const [value, setValue] = useState("");
+
+    // change handler 
     const changeHandler = (event) => {
-        event.preventDefault();
-        useInputValidation().value
-    };
-
-    const blurHandler = (event) => {};
-
-    const focusHandler = (event) => {};
+        setValue(event.target.value);
+    }
 
     return (
         <div className=" flex flex-col ">
@@ -17,12 +16,10 @@ const Input = (props) => {
                 {props.label}
             </label>
             <input
-                type="text"
-                value={name}
+                type={props.type? props.type: "text"}
+                value={value}
                 onChange={changeHandler}
-                onFocus={focusHandler}
-                onBlur={blurHandler}
-                placeholder={props.placeholder}
+                placeholder={props.holder}
             />
         </div>
     );

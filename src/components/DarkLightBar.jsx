@@ -10,13 +10,13 @@ const DarkLightBar = (props) => {
     };
 
     return (
-        <div className=" mt-6 flex justify-between items-center">
+        <div className=" my-6 flex justify-between items-center">
             {/* left section  */}
             <div>
-                <h6 className=" text-sm font-bold text-red-500 capitalize">
+                <h6 className=" text-base font-bold text-red-500 capitalize">
                     welcome {props.name.split(" ")[1]},
                 </h6>
-                <p className=" capitalize text-[12px] mt-1">
+                <p className=" capitalize text-[14px] mt-1">
                     {" "}
                     How're you feeling today?
                 </p>

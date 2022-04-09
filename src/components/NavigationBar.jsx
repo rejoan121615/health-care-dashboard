@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // images
 import Overview from "../assets/navigation/Overview.svg";
@@ -24,7 +25,7 @@ const NavigationBar = () => {
         },
         {
             img: Doctor,
-            name: "doctor",
+            name: "doctors",
         },
         {
             img: PathologyResult,
@@ -45,7 +46,7 @@ const NavigationBar = () => {
     ];
 
     return (
-        <aside className="rounded-[0px]  bg-half-white w-full max-w-[350px] lg:rounded-[40px]">
+        <aside className="rounded-[0px] relative  bg-half-white w-full max-w-[350px] lg:rounded-[15px]">
             {/* brand  */}
             <div className="flex justify-between px-[30px] py-[20px] border-b-2">
                 <img src={Logo} alt="logo text" />
@@ -71,6 +72,24 @@ const NavigationBar = () => {
                     );
                 })}
             </ul>
+            {/* bottom text  */}
+            <div className="flex px-[30px] py-[25px] border-t-2 absolute w-full bottom-0">
+                <a
+                    title="call"
+                    href="+8801643941863"
+                    className=" w-7 h-7 bg-form-bg rounded-md flex justify-center items-center"
+                >
+                    <FontAwesomeIcon
+                        className=" text-white text-[12px]"
+                        icon="fa-solid fa-phone"
+                    />
+                </a>
+                {/* text  */}
+                <div className=" ml-2">
+                    <p className=" heading capitalize">emergency hotline:</p>
+                    <p>+234 92 928 2891 +234 60 621 2098</p>
+                </div>
+            </div>
         </aside>
     );
 };

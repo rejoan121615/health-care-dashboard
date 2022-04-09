@@ -25,4 +25,12 @@
     p{
         @apply text-[12px];
     }
+
+    .heading {
+        @apply text-red text-[14px] font-bold;
+    }
+}
+
+#root {
+    @apply h-screen;
 }
