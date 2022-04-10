@@ -15,6 +15,7 @@ import Navbar from "./components/NavigationBar";
 import Doctors from "./pages/Doctors";
 import Logout from './pages/Logout';
 import Setting from './pages/Setting';
+import Chats from './pages/Chats';
 
 // import PortalNavBar from "../components/PortalNavBar";
 import SearchBar from "./components/SearchBar";
@@ -49,7 +50,7 @@ const App = () => {
                 {/* left side  */}
                 <Navbar />
                 <aside>
-                    <SearchBar />
+                    <SearchBar notification={true} profile={true} />
                     <DarkLightBar name={userData.name} />
                     {/* all route  */}
                     <Route path="/">
@@ -64,6 +65,7 @@ const App = () => {
                     />
                     <Route path="/forgot-password" component={ForgotPassword} />
                     <Route path="/doctors" component={Doctors} />
+                    <Route path="/chats" component={Chats} />
                     <Route path="/setting" component={Setting} />
                     <Route path="/logout" component={Logout} />
                 </aside>

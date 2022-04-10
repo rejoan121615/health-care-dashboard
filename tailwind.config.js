@@ -11,7 +11,8 @@ module.exports = {
                 "form-bg": "#100db1",
                 "half-white": "#f7f7f7",
                 "light-black": "#343434",
-                'red': "#f80d38",
+                red: "#f80d38",
+                green: "#25e621",
             },
             margin: {
                 "25px": "25px",
