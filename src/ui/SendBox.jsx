@@ -5,9 +5,22 @@ import FaceIcon from "../assets/icons/face-icon.png";
 
 const SendBox = () => {
     const [showEmojiBox, setShowEmojiBox] = useState(false);
+    const [messageBox, setMessageBox] = useState("");
+
+    const messageBoxHandler = (event) => {
+        setMessageBox(event.target.value);
+    };
+
+    const onEmojiClick = (event, emojiObject) => {
+        setMessageBox(messageBox + emojiObject.emoji);
+    };
 
     const emojiHandler = () => {
-        setShowEmojiBox(!showEmojiBox)
+        setShowEmojiBox(!showEmojiBox);
+    };
+
+    const focusHandler = () => {
+        showEmojiBox ? setShowEmojiBox(false) : null;
     };
 
     return (
@@ -26,13 +39,18 @@ const SendBox = () => {
                                     className=" cursor-pointer w-6"
                                 />
                             </div>
-                            { showEmojiBox && <div className=" absolute bottom-[60px] left-10">
-                                <EmojiPicker />
-                            </div>}
+                            {showEmojiBox && (
+                                <div className=" absolute bottom-[60px] left-10">
+                                    <EmojiPicker onEmojiClick={onEmojiClick} />
+                                </div>
+                            )}
                         </div>
                         {/* texts  */}
                         <div className=" w-full">
                             <input
+                                value={messageBox}
+                                onChange={messageBoxHandler}
+                                onFocus={focusHandler}
                                 type="text"
                                 placeholder="Start typing here"
                                 className=" p-0 placeholder:text-black focus-visible:outline-none w-full mt-0 ml-2 border-0 text-[14px] placeholder:text-[14px]"
