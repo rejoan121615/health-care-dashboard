@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 // import package
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas, faXmark, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { fas, faXmark, faPhone, faEllipsis, faPaperPlane, faFaceLaugh } from "@fortawesome/free-solid-svg-icons";
 import Chart from "chart.js/auto";
 
 // component import
@@ -22,7 +22,7 @@ import SearchBar from "./components/SearchBar";
 import DarkLightBar from "./components/DarkLightBar";
 import PatientTracker from "./components/PatientTracker";
 
-library.add(fas, faXmark, faPhone);
+library.add(fas, faXmark, faPhone, faEllipsis, faPaperPlane, faFaceLaugh);
 
 const App = () => {
     // data

@@ -12,7 +12,8 @@
         @apply capitalize;
     }
 
-    input, .submit {
+    input,
+    .submit {
         @apply px-[22px] py-[20px]  border-2  border-input-border rounded-[40px] mt-[5px];
     }
     .submit {
@@ -20,9 +21,8 @@
     }
     .input-container {
         @apply flex flex-col mb-25px;
-        
     }
-    p{
+    p {
         @apply text-[12px];
     }
 
@@ -36,6 +36,12 @@
 
     .page-wrap {
         @apply w-full border-2 h-[78.5%] rounded-[15px];
+    }
+    .ReactCollapse--collapse {
+        transition: height 500ms;
+    }
+    .para-md {
+        @apply text-[14px];
     }
 }
 
